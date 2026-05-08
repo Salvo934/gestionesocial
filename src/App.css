@@ -486,9 +486,13 @@
   border: none;
   margin: 0;
   cursor: pointer;
-  background: rgb(0 0 0 / 0.76);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: radial-gradient(
+    ellipse 90% 80% at 100% 0%,
+    rgb(0 0 0 / 0.82) 0%,
+    rgb(0 0 0 / 0.72) 100%
+  );
+  backdrop-filter: blur(14px) saturate(112%);
+  -webkit-backdrop-filter: blur(14px) saturate(112%);
   opacity: 0;
   transition: opacity 0.33s cubic-bezier(0.32, 0.72, 0, 1);
 }
@@ -504,24 +508,36 @@
   display: flex;
   flex-direction: column;
   height: min(100vh, 100dvh);
-  width: min(100%, 23rem);
+  width: min(100%, 24.25rem);
   max-width: 100%;
-  border-radius: clamp(16px, 7vw, 24px) 0 0 clamp(16px, 7vw, 24px);
-  border: 1px solid rgb(255 255 255 / 0.12);
+  border-radius: clamp(18px, 8vw, 26px) 0 0 clamp(18px, 8vw, 26px);
+  border: 1px solid rgb(255 255 255 / 0.1);
   border-right: none;
   background:
+    radial-gradient(
+      ellipse 120% 45% at 100% -8%,
+      rgb(139 84 255 / 0.08) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 85% 50% at 0% 100%,
+      rgb(0 229 160 / 0.06) 0%,
+      transparent 50%
+    ),
     linear-gradient(
-      180deg,
-      rgb(24 24 27 / 0.98) 0%,
-      rgb(9 9 11 / 0.989) 45%,
-      rgb(6 8 11 / 0.992) 100%
+      172deg,
+      rgb(26 26 30 / 0.97) 0%,
+      rgb(11 11 14 / 0.985) 38%,
+      rgb(7 9 13 / 0.99) 100%
     ),
     var(--pkg-bg);
   box-shadow:
-    inset 1px 0 0 rgb(255 255 255 / 0.06),
-    -24px 0 64px -16px rgb(0 0 0 / 0.93);
+    inset 0 0 0 1px rgb(255 255 255 / 0.045),
+    inset 1px 0 0 rgb(255 255 255 / 0.05),
+    -32px 0 80px -20px rgb(0 0 0 / 0.92),
+    -8px 0 48px rgb(0 229 160 / 0.04);
   transform: translate3d(100%, 0, 0);
-  transition: transform 0.33s var(--pkg-ease-smooth);
+  transition: transform 0.38s cubic-bezier(0.32, 0.72, 0, 1);
   padding-bottom: env(safe-area-inset-bottom, 0px);
   padding-inline: env(safe-area-inset-right, 0px) 0;
   padding-top: max(0.75rem, env(safe-area-inset-top, 0px));
@@ -533,51 +549,71 @@
 
 .pkg-mnav-accent {
   position: absolute;
-  inset: 0 auto auto 0;
-  height: 1px;
-  right: 0;
+  top: clamp(14px, 5vw + 10px, 52px);
+  bottom: clamp(28px, 9vw + 22px, 120px);
+  left: 0;
+  width: 3px;
+  border-radius: 0 999px 999px 0;
   pointer-events: none;
-  border-radius: 999px;
   background: linear-gradient(
-    90deg,
-    transparent,
-    rgb(0 229 160 / 0.66),
-    transparent
+    180deg,
+    rgb(0 229 160 / 0.15) 0%,
+    rgb(0 229 160 / 0.92) 45%,
+    rgb(139 84 255 / 0.45) 100%
   );
+  box-shadow: 0 0 24px rgb(0 229 160 / 0.25);
 }
 
 .pkg-mnav-head {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 0.95rem;
-  padding: 0.45rem 1.05rem 0.92rem clamp(1.02rem, 4vw + 0.62rem, 1.85rem);
-  padding-inline-end: clamp(0.92rem, 5vw + 0.62rem, 1.62rem);
+  gap: 1rem;
+  padding: clamp(0.72rem, 4vw + 0.52rem, 1.08rem)
+    clamp(0.92rem, 5vw + 0.62rem, 1.72rem)
+    clamp(1.15rem, 5vw + 0.82rem, 1.72rem)
+    clamp(1.12rem, 5vw + 0.82rem, 1.92rem);
+  border-bottom: 1px solid rgb(255 255 255 / 0.065);
 }
 
-.pkg-mnav-kicker {
+.pkg-mnav-head-copy {
+  min-width: 0;
+}
+
+.pkg-mnav-brand-name {
   margin: 0;
-  font-size: 0.625rem;
-  font-weight: 700;
-  letter-spacing: 0.31em;
-  text-transform: uppercase;
-  color: rgb(143 247 217 / 0.98);
-}
-
-.pkg-mnav-title {
-  margin: 0.45rem 0 0;
   font-family: var(--pkg-font-display);
-  font-size: clamp(1.175rem, 2.5vw + 0.9rem, 1.35rem);
+  font-size: clamp(1.76rem, 5.5vw + 1rem, 2.05rem);
   font-weight: 800;
-  letter-spacing: -0.036em;
-  color: rgb(247 247 247);
+  letter-spacing: -0.042em;
+  line-height: 1;
+  color: #f4f4f5;
 }
 
-.pkg-mnav-subtitle {
-  margin: 0.43rem 0 0;
-  font-size: 0.7825rem;
-  line-height: 1.4;
-  color: var(--pkg-soft);
+.pkg-mnav-brand-name .pkg-logo-dot {
+  color: var(--pkg-accent-hover);
+}
+
+.pkg-mnav-brand-line {
+  margin: clamp(0.62rem, 4vw + 0.52rem, 0.92rem) 0 0;
+  width: 2.85rem;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgb(0 229 160),
+    rgb(120 235 208 / 0.35),
+    rgb(139 84 255 / 0.4)
+  );
+}
+
+.pkg-mnav-brand-tagline {
+  margin: 0.55rem 0 0;
+  font-size: 0.6975rem;
+  font-weight: 700;
+  letter-spacing: 0.29em;
+  text-transform: uppercase;
+  color: rgb(169 239 217 / 0.98);
 }
 
 .pkg-mnav-close {
@@ -585,17 +621,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 1rem;
-  border: 1px solid rgb(255 255 255 / 0.12);
-  background: rgb(255 255 255 / 0.05);
-  color: rgb(212 212 216);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1.125rem;
+  border: 1px solid rgb(255 255 255 / 0.11);
+  background: rgb(255 255 255 / 0.065);
+  color: rgb(228 228 231);
   cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.1),
+    0 6px 20px rgb(0 0 0 / 0.22);
   transition:
     border-color 0.2s var(--pkg-ease),
     background-color 0.2s var(--pkg-ease),
-    color 0.2s var(--pkg-ease);
+    color 0.2s var(--pkg-ease),
+    box-shadow 0.2s var(--pkg-ease);
 }
 
 .pkg-mnav-close svg {
@@ -619,7 +661,10 @@
   display: flex;
   flex-direction: column;
   min-height: 0;
-  padding: 0 1rem 1.25rem clamp(1.05rem, 4vw + 0.72rem, 1.92rem);
+  padding: clamp(1.08rem, 5vw + 0.92rem, 1.72rem)
+    clamp(1.08rem, 5vw + 0.82rem, 1.92rem)
+    clamp(1.42rem, 8vw + 1rem, 2.08rem)
+    clamp(1.12rem, 5vw + 0.82rem, 1.92rem);
   overflow-y: auto;
 }
 
@@ -627,27 +672,34 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  border-radius: 1rem;
-  border: 1px solid rgb(255 255 255 / 0.09);
-  background: rgb(0 0 0 / 0.36);
-  box-shadow:
-    inset 0 1px 0 rgb(255 255 255 / 0.05),
-    0 1px 28px rgb(0 0 0 / 0.28);
+  display: flex;
+  flex-direction: column;
+  gap: 0.58rem;
 }
 
-.pkg-mnav-list li:not(:last-child) {
-  border-bottom: 1px solid rgb(255 255 255 / 0.06);
+.pkg-mnav-list li {
+  margin: 0;
 }
 
 .pkg-mnav-link {
   display: flex;
-  min-height: 3.52rem;
+  min-height: 3.35rem;
   align-items: center;
   justify-content: space-between;
   gap: 0.92rem;
-  padding: 0.85rem clamp(1.02rem, 4vw, 1.2rem);
+  padding: 0.85rem clamp(1.05rem, 5vw + 0.92rem, 1.38rem);
   text-decoration: none;
-  transition: background-color 0.18s var(--pkg-ease);
+  transition:
+    border-color 0.2s var(--pkg-ease),
+    background-color 0.2s var(--pkg-ease),
+    box-shadow 0.25s var(--pkg-ease),
+    transform 0.2s var(--pkg-ease);
+  border-radius: 14px;
+  border: 1px solid rgb(255 255 255 / 0.08);
+  background: rgb(255 255 255 / 0.035);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.07),
+    0 2px 12px rgb(0 0 0 / 0.12);
 }
 
 .pkg-mnav-link span:first-child {
@@ -658,11 +710,24 @@
 
 .pkg-mnav-link:hover,
 .pkg-mnav-link:active {
-  background: rgb(255 255 255 / 0.05);
+  border-color: rgb(0 229 160 / 0.22);
+  background: rgb(255 255 255 / 0.06);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.1),
+    0 0 0 1px rgb(0 229 160 / 0.08),
+    0 8px 24px rgb(0 0 0 / 0.18);
+}
+
+.pkg-mnav-link:active {
+  transform: translateY(1px) scale(0.995);
 }
 
 .pkg-mnav-link:focus-visible {
   outline: none;
+  border-color: rgb(0 229 160 / 0.45);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.1),
+    0 0 0 3px rgb(0 229 160 / 0.18);
 }
 
 .pkg-mnav-link:focus-visible span:first-child {
@@ -671,19 +736,31 @@
 }
 
 .pkg-mnav-link-arrow {
-  font-size: 1.065rem;
-  color: rgb(82 82 91);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  color: rgb(124 246 207 / 0.95);
+  background: rgb(0 229 160 / 0.1);
+  border: 1px solid rgb(0 229 160 / 0.15);
   transition:
-    transform 0.2s var(--pkg-ease),
-    color 0.2s var(--pkg-ease);
+    transform 0.22s var(--pkg-ease),
+    color 0.2s var(--pkg-ease),
+    background-color 0.2s var(--pkg-ease);
 }
 
-.pkg-mnav-link:hover .pkg-mnav-link-arrow {
-  color: var(--pkg-accent-hover);
+.pkg-mnav-link:hover .pkg-mnav-link-arrow,
+.pkg-mnav-link:active .pkg-mnav-link-arrow {
+  transform: translateX(3px);
+  color: rgb(234 253 246);
+  background: rgb(0 229 160 / 0.18);
 }
 
 .pkg-mnav-footer-cta {
-  margin-top: 1.5rem;
+  margin-top: clamp(1.42rem, 5vw + 1.12rem, 1.85rem);
   display: inline-flex;
   align-items: center;
   justify-content: center;

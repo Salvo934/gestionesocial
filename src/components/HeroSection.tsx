@@ -262,7 +262,7 @@ export function HeroSection() {
               </div>
 
               <p className="pkg-hero-note">
-                Da <strong className="pkg-hero-price">390&nbsp;€</strong> / mese · canale WhatsApp prioritario · risposta
+                Da <strong className="pkg-hero-price">299&nbsp;€</strong> / mese · canale WhatsApp prioritario · risposta
                 durante l&apos;orario lavorativo
               </p>
             </div>

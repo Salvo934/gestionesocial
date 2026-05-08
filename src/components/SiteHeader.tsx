@@ -143,9 +143,11 @@ export function SiteHeader() {
 
           <div className="pkg-mnav-head">
             <div className="pkg-mnav-head-copy">
-              <p className="pkg-mnav-kicker">Menu</p>
-              <p className="pkg-mnav-title">Pacchetti agenzie</p>
-              <p className="pkg-mnav-subtitle">Basket · Social · Coordinamento WhatsApp</p>
+              <p className="pkg-mnav-brand-name">
+                KataHero<span className="pkg-logo-dot">.</span>
+              </p>
+              <p className="pkg-mnav-brand-line" aria-hidden />
+              <p className="pkg-mnav-brand-tagline">{HEADER_PAGE_TAGLINE}</p>
             </div>
             <button type="button" className="pkg-mnav-close" aria-label="Chiudi menu" onClick={closeNav}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden strokeWidth={2}>
