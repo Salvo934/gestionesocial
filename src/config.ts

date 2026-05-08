@@ -1,0 +1,46 @@
+/**
+ * Numero WhatsApp in formato E.164 senza + (Italia: es. 393274597773).
+ */
+export const WHATSAPP_E164 = '393274597773'
+
+export const KATAHERO_URL = 'https://www.katahero.com'
+
+/** Path immagine logo (`/logo.svg` o URL). `null` mostra il wordmark testuale. */
+export const LOGO_SRC: string | null = null
+
+export function whatsappHref(message: string): string {
+  return `https://wa.me/${WHATSAPP_E164}?text=${encodeURIComponent(message)}`
+}
+
+export type AgencyPackage = {
+  id: string
+  name: string
+  priceLabel: string
+  subtitle: string
+  includes: string[]
+  idealFor: string
+  ctaLabel: string
+  recommended?: boolean
+}
+
+/** Ogni piano ha 7 punti equiparabili così confronti liste riga contro riga. */
+export const PACKAGES: AgencyPackage[] = [
+  {
+    id: 'rookie',
+    name: 'Rookie',
+    priceLabel: '390 € / mese',
+    subtitle:
+      'La linea ingresso quando il traffico giornaliero news è medio ma reputazione giornaliero non negozia.',
+    includes: [
+      'Fino a 8 contenuti mensili combinabili fra post e stories sempre con grafiche incluse giornaliero',
+      'Biblioteca giornaliero template giornaliero coerenti giornaliero identità giornaliero agenziale giornaliero',
+      'Blocchi giornaliero narrativi giornaliero firme prestazioni giornaliero roster sempre senza giornaliero rumore giornaliero',
+      'Deliverable giornaliero publish giornaliero pronti giornaliero sempre passabile giornaliero staff cliente giornaliero',
+      'Materiale foto-release sempre dall’agenzia • una tornata correttivi sempre incluso nel corrispettivo',
+      'Consegna operativa medio 48 ore lavorative dopo ricezione materiale cliente completo e approvato',
+      'Linea giornaliero WhatsApp finestra coordinamento quando serve durante giorni feriali standard',
+    ],
+    idealFor:
+      'team piccolo giornaliero sempre che sponsor giornaliero pretende giornaliero struttura giornaliero completa sempre.',
+    ctaLabel: 'Chiedimi Rookie giornaliero · giornaliero',
+  },
