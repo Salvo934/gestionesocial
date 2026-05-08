@@ -176,12 +176,14 @@ export function HeroSection() {
                       className="pkg-hero-slide"
                       id={`${sliderId}-slide-${i}`}
                       aria-hidden={i !== index}
-                      aria-labelledby={eyebrowIds[i]}
+                      aria-labelledby={`${sliderId}-headline-${i}`}
                     >
                       <p id={eyebrowIds[i]} className="pkg-hero-eyebrow">
                         {slide.eyebrow}
                       </p>
-                      <p className="pkg-hero-title">{slide.headline}</p>
+                      <p id={`${sliderId}-headline-${i}`} className="pkg-hero-title">
+                        {slide.headline}
+                      </p>
                       <p className="pkg-hero-lead">{slide.lead}</p>
                     </article>
                   ))}

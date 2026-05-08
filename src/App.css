@@ -918,18 +918,9 @@
     letter-spacing: -0.01em;
   }
 
-  /* Eyebrow: più leggibile dello stile desktop (tracking meno estremo, corpo maggiore) */
+  /* Su mobile nascondiamo le eyebrow (badge sopra il titolo) */
   .pkg-hero .pkg-hero-eyebrow {
-    max-width: 100%;
-    font-size: 0.6875rem;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    line-height: 1.55;
-    color: rgb(198 203 216 / 0.96);
-    border-bottom-color: rgb(255 255 255 / 0.18);
-    padding-bottom: 0.65rem;
-    margin-bottom: 1rem;
-    text-shadow: none;
+    display: none;
   }
 
   .pkg-hero-slider {
