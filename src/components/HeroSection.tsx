@@ -8,7 +8,7 @@ import {
 const PACKAGE_LINE_MID_DOT = getPackagesMidDotLine()
 
 const WA_REQUEST = whatsappHref(
-  'Ciao, ti scrivo dalla pagina pacchetti agenzie basket. Vorrei capire quale piano copre meglio il mio caso (roster, frequenza news, tempi). Quando puoi rispondere corto anche solo su WhatsApp?',
+  'Ciao, ti scrivo dalla pagina pacchetti agenzie basket. Vorrei capire quale piano copre meglio il mio caso (roster, frequenza news, tempi). Grazie!',
 )
 
 const POINTS = [
