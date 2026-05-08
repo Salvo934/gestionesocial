@@ -1,7 +1,12 @@
 import { PACKAGES, whatsappHref } from '../config'
 
 function packageWaMessage(name: string): string {
-  return `Ciao, vorrei informazioni sulla linea "${name}" (comunicazione social per agenzie e procuratori basket). Rispondi quando puoi anche solo con una fascia oraria utile per una call corta.`
+  return [
+    `Ciao, ti scrivo dalla pagina dei pacchetti KataHero (social per agenzie e procuratori basket).`,
+    `Vorrei approfondire il piano «${name}»: in particolare cosa è compreso, tempi di consegna e come si parametra sul tipo di roster che abbiamo noi.`,
+    `Quando puoi rispondi pure qui; se ti torna più comodo, organizziamo anche una chiamata breve — indicami tu una fascia utile.`,
+    'Grazie!',
+  ].join('\n\n')
 }
 
 export function PackagesSection() {

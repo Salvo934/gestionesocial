@@ -788,6 +788,8 @@
 .pkg-hero-bg-sheet--active {
   opacity: 1;
   animation: pkg-hero-bg-drift 24s var(--pkg-ease-smooth) forwards;
+  /* Foto più nitide e leggibili sotto il testo (il layer sopra è più leggero) */
+  filter: brightness(1.06) contrast(1.04) saturate(1.06);
 }
 
 .pkg-hero--reduce-motion .pkg-hero-bg-sheet {
@@ -804,48 +806,32 @@
   inset: 0;
   z-index: 2;
   pointer-events: none;
-  /* Velatura leggera: le foto restano ben visibili; leggibilità su copy/rail dalla card vetro */
+  /* Scuro solo ai bordi: la zona centrale / campo resta più luminosa. Nessun blur sullo sfondo così le foto restano definite. */
   background:
-    radial-gradient(ellipse 130% 80% at 50% -8%, rgb(5 6 10 / 0.2), transparent 52%),
-    radial-gradient(ellipse 75% 45% at 92% 4%, rgb(0 229 160 / 0.04), transparent 42%),
-    radial-gradient(ellipse 115% 60% at 50% 102%, rgb(4 5 10 / 0.32), transparent 48%),
+    radial-gradient(ellipse 145% 95% at 50% 18%, rgb(5 7 12 / 0.09), transparent 58%),
+    radial-gradient(ellipse 90% 55% at 82% 38%, rgb(0 229 160 / 0.035), transparent 50%),
+    radial-gradient(ellipse 120% 75% at 50% 108%, rgb(3 4 8 / 0.38), transparent 52%),
     linear-gradient(
-      185deg,
-      rgb(6 8 14 / 0.24) 0%,
-      rgb(5 5 8 / 0.06) 48%,
-      rgb(6 7 11 / 0.36) 100%
+      188deg,
+      rgb(5 7 12 / 0.14) 0%,
+      rgb(4 5 8 / 0.02) 42%,
+      rgb(5 6 10 / 0.22) 100%
     );
-  backdrop-filter: blur(2px) saturate(112%);
-  -webkit-backdrop-filter: blur(2px) saturate(112%);
-}
-
-@media (min-width: 768px) {
-  .pkg-hero-bg-readability {
-    backdrop-filter: blur(3px) saturate(114%);
-    -webkit-backdrop-filter: blur(3px) saturate(114%);
-  }
 }
 
 @media (min-width: 992px) {
   .pkg-hero-bg-readability {
     background:
-      radial-gradient(ellipse 82% 110% at 4% 40%, rgb(6 8 13 / 0.34), transparent 60%),
-      radial-gradient(ellipse 48% 40% at 96% 8%, rgb(139 84 255 / 0.05), transparent 44%),
-      radial-gradient(ellipse 82% 50% at 68% 100%, rgb(4 5 9 / 0.22), transparent 44%),
+      radial-gradient(ellipse 70% 120% at 2% 45%, rgb(5 7 12 / 0.28), transparent 58%),
+      radial-gradient(ellipse 55% 45% at 98% 12%, rgb(139 84 255 / 0.04), transparent 46%),
+      radial-gradient(ellipse 95% 58% at 72% 96%, rgb(3 4 8 / 0.34), transparent 50%),
       linear-gradient(
-        108deg,
-        rgb(7 9 14 / 0.38) 0%,
-        rgb(5 6 9 / 0.06) 50%,
-        rgb(7 8 13 / 0.26) 100%
+        102deg,
+        rgb(6 8 14 / 0.22) 0%,
+        rgb(5 6 9 / 0.02) 46%,
+        rgb(6 8 13 / 0.2) 100%
       );
-    backdrop-filter: blur(4px) saturate(118%);
-    -webkit-backdrop-filter: blur(4px) saturate(118%);
   }
-}
-
-.pkg-hero--reduce-motion .pkg-hero-bg-readability {
-  backdrop-filter: blur(1px) saturate(108%);
-  -webkit-backdrop-filter: blur(1px) saturate(108%);
 }
 
 .pkg-hero-shell {
@@ -878,7 +864,7 @@
     margin-inline: -0.08rem;
     border-radius: calc(var(--pkg-radius) + 2px);
     border: 1px solid rgb(255 255 255 / 0.095);
-    background: rgb(10 11 14 / 0.64);
+    background: rgb(10 11 14 / 0.7);
     box-shadow:
       inset 0 1px 0 rgb(255 255 255 / 0.07),
       0 20px 50px rgb(0 0 0 / 0.48);
@@ -909,7 +895,7 @@
       clamp(1.15rem, 2.1vw + 0.88rem, 1.82rem);
     border-radius: calc(var(--pkg-radius) - 2px);
     border: 1px solid rgb(255 255 255 / 0.08);
-    background: rgb(10 11 15 / 0.52);
+    background: rgb(10 11 15 / 0.58);
     box-shadow:
       inset 0 1px 0 rgb(255 255 255 / 0.07),
       0 32px 80px rgb(0 0 0 / 0.46);
@@ -960,7 +946,7 @@
       clamp(1.05rem, 1.75vw + 0.82rem, 1.48rem);
     border-radius: calc(var(--pkg-radius) - 2px);
     border: 1px solid rgb(255 255 255 / 0.082);
-    background: rgb(10 11 15 / 0.48);
+    background: rgb(10 11 15 / 0.54);
     box-shadow:
       inset 0 1px 0 rgb(255 255 255 / 0.055),
       0 28px 72px rgb(0 0 0 / 0.44);
