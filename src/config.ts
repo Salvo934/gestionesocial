@@ -5,6 +5,16 @@ export const WHATSAPP_E164 = '393274597773'
 
 export const KATAHERO_URL = 'https://www.katahero.com'
 
+/** Profilo Instagram (landing / footer). */
+export const INSTAGRAM_PROFILE_URL =
+  'https://www.instagram.com/katahero?igsh=b2tpbmM4bGQyazcw'
+
+/** Email contatti footer. */
+export const CONTACT_EMAIL = 'salvo.bonavita9808@gmail.com'
+
+/** Telefono mostrato in footer (stesso E.164 di WHATSAPP_E164). */
+export const CONTACT_PHONE_DISPLAY = '+39 327 459 7773'
+
 /** Path immagine logo (`/logo.svg` o URL). `null` mostra il wordmark testuale. */
 export const LOGO_SRC: string | null = null
 
