@@ -39,8 +39,7 @@ export const PACKAGES: AgencyPackage[] = [
     id: 'rookie',
     name: 'Rookie',
     priceLabel: '299 € / mese',
-    subtitle:
-      'Per agenzie o procuratori con pochi atleti che vogliono un feed ordinato, credibile e coerente verso club, sponsor e addetti ai lavori.',
+    subtitle: 'Roster contenuto: feed ordinato e credibile verso club e sponsor.',
     includes: [
       'Fino a 10 contenuti al mese tra post statici, caroselli semplici e story grafiche',
       'Grafiche e testi pronti per la pubblicazione',
@@ -53,15 +52,14 @@ export const PACKAGES: AgencyPackage[] = [
       'Supporto WhatsApp nei giorni feriali per piccoli aggiustamenti',
     ],
     idealFor:
-      'agenzie o procuratori con pochi atleti e bisogno di un feed ordinato e credibile verso club e sponsor.',
+      'hai pochi profili e vuoi un feed credibile con club e sponsor.',
     ctaLabel: 'Chiedi info su Rookie',
   },
   {
     id: 'rising',
     name: 'Rising',
     priceLabel: '499 € / mese',
-    subtitle:
-      'Per agenzie e procuratori che gestiscono più atleti e vogliono una comunicazione più costante, riconoscibile e professionale.',
+    subtitle: 'Più atleti: comunicazione costante, riconoscibile e professionale.',
     recommended: true,
     includes: [
       'Fino a 20 contenuti al mese tra post, caroselli e story',
@@ -76,7 +74,7 @@ export const PACKAGES: AgencyPackage[] = [
       'Mini report mensile con riepilogo dei contenuti prodotti',
     ],
     idealFor:
-      'agenzie e procuratori con più atleti che vogliono una comunicazione costante, riconoscibile e professionale.',
+      'gestisci più atleti senza rinunciare a tono uniforme e continuità.',
     ctaLabel: 'Chiedi info su Rising',
   },
   {
@@ -84,7 +82,7 @@ export const PACKAGES: AgencyPackage[] = [
     name: 'All-star',
     priceLabel: '699 € / mese',
     subtitle:
-      'Per agenzie sportive più strutturate che vogliono una presenza social continua, ordinata e pronta per valorizzare più atleti durante la stagione.',
+      'Agenzie strutturate: presenza social continua per valorizzare più atleti.',
     includes: [
       'Fino a 30 contenuti al mese tra post, caroselli e story',
       'Calendario editoriale mensile',
@@ -98,7 +96,7 @@ export const PACKAGES: AgencyPackage[] = [
       'Report mensile contenuti + suggerimenti per il mese successivo',
     ],
     idealFor:
-      'agenzie sportive più strutturate con presenza social continua e valorizzazione di più atleti in stagione.',
+      'agenzia più strutturata e roster ampio da accompagnare tutta la stagione.',
     ctaLabel: 'Chiedi info su All-star',
   },
 ]
