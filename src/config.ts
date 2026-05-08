@@ -39,7 +39,7 @@ export const PACKAGES: AgencyPackage[] = [
     id: 'rookie',
     name: 'Rookie',
     priceLabel: '299 € / mese',
-    subtitle: 'Roster contenuto: feed ordinato e credibile verso club e sponsor.',
+    subtitle: 'Roster contenuto: feed ordinato e credibile verso club, sponsor e brand.',
     includes: [
       'Fino a 10 contenuti al mese tra post statici, caroselli semplici e story grafiche',
       'Grafiche e testi pronti per la pubblicazione',

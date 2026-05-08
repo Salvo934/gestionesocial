@@ -19,11 +19,8 @@ const POINTS = [
 
 const AUTOPLAY_MS = 7800
 
-/** Sfondi hero (public/): sincronizzati con l’ordine delle slide */
-const HERO_BACKGROUNDS = [
-  { src: '/hero/court.png', position: 'center 30%' },
-  { src: '/hero/ball.png', position: '46% center' },
-] as const
+/** Sfondo hero: file in `public/` */
+const HERO_BACKGROUND_VIDEO_SRC = '/sfondohero2.mp4'
 
 const SLIDES = [
   {
@@ -59,6 +56,7 @@ export function HeroSection() {
     () => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches,
   )
   const touchStart = useRef<number | null>(null)
+  const bgVideoRef = useRef<HTMLVideoElement | null>(null)
   const sliderId = useId()
 
   const n = SLIDES.length
@@ -69,6 +67,18 @@ export function HeroSection() {
     mq.addEventListener('change', onChange)
     return () => mq.removeEventListener('change', onChange)
   }, [])
+
+  useEffect(() => {
+    const el = bgVideoRef.current
+    if (!el) return
+    if (reduceMotion) {
+      el.pause()
+    } else {
+      void el.play().catch(() => {
+        /* autoplay bloccati: resta primo frame fino all’interazione */
+      })
+    }
+  }, [reduceMotion])
 
   const go = useCallback(
     (dir: number) => {
@@ -111,18 +121,18 @@ export function HeroSection() {
       aria-label="Hero — gestione social e contenuti pubblicati sul roster basket"
     >
       <div className="pkg-hero-media" aria-hidden="true">
-        {HERO_BACKGROUNDS.map((bg, i) => (
-          <div
-            key={bg.src}
-            className={`pkg-hero-bg-sheet${index === i ? ' pkg-hero-bg-sheet--active' : ''}`}
-            style={
-              {
-                backgroundImage: `url(${bg.src})`,
-                backgroundPosition: bg.position,
-              } as React.CSSProperties
-            }
-          />
-        ))}
+        <video
+          ref={bgVideoRef}
+          className="pkg-hero-bg-video"
+          autoPlay={!reduceMotion}
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-hidden
+        >
+          <source src={HERO_BACKGROUND_VIDEO_SRC} type="video/mp4" />
+        </video>
         <div className="pkg-hero-bg-readability" />
       </div>
       <div className="pkg-hero-shell">

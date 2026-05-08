@@ -789,40 +789,22 @@
   overflow: hidden;
 }
 
-@keyframes pkg-hero-bg-drift {
-  0% {
-    transform: scale(1.02) translate3d(0.12%, 0, 0);
-  }
-  100% {
-    transform: scale(1.048) translate3d(-0.38%, -0.18%, 0);
-  }
-}
-
-.pkg-hero-bg-sheet {
+.pkg-hero-bg-video {
   position: absolute;
   inset: -4%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 0;
+  width: calc(100% + 8%);
+  height: calc(100% + 8%);
+  object-fit: cover;
+  object-position: center 30%;
+  z-index: 0;
+  pointer-events: none;
   transform: scale(1.02);
   transform-origin: center center;
-  transition: opacity 1.05s var(--pkg-ease-smooth);
-  will-change: transform, opacity;
-}
-
-.pkg-hero-bg-sheet--active {
-  opacity: 1;
-  animation: pkg-hero-bg-drift 24s var(--pkg-ease-smooth) forwards;
-  /* Foto più nitide e leggibili sotto il testo (il layer sopra è più leggero) */
+  /* Allineato allo stile delle vecchie foto hero */
   filter: brightness(1.06) contrast(1.04) saturate(1.06);
 }
 
-.pkg-hero--reduce-motion .pkg-hero-bg-sheet {
-  transition-duration: 0.35s;
-}
-
-.pkg-hero--reduce-motion .pkg-hero-bg-sheet--active {
-  animation: none;
+.pkg-hero--reduce-motion .pkg-hero-bg-video {
   transform: scale(1);
 }
 
