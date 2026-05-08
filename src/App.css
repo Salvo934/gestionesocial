@@ -834,6 +834,17 @@
   }
 }
 
+/* Mobile: niente foto dietro la hero — solo il fondo della pagina */
+@media (max-width: 991px) {
+  .pkg-hero-media {
+    display: none;
+  }
+
+  .pkg-hero-bg-readability {
+    display: none;
+  }
+}
+
 .pkg-hero-shell {
   position: relative;
   z-index: 2;
