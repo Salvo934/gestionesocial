@@ -33,63 +33,72 @@ export type AgencyPackage = {
   recommended?: boolean
 }
 
-/** Tre piani confrontabili voce su voce (stesso numero di righe per cliente e budget). */
+/** Tre piani confrontabili voce su voce. */
 export const PACKAGES: AgencyPackage[] = [
   {
     id: 'rookie',
     name: 'Rookie',
-    priceLabel: '349 € / mese',
-    subtitle: 'Pochi atleti: comunque un feed ordinato e credibile verso club e sponsor.',
+    priceLabel: '299 € / mese',
+    subtitle:
+      'Per agenzie o procuratori con pochi atleti che vogliono un feed ordinato, credibile e coerente verso club, sponsor e addetti ai lavori.',
     includes: [
-      'Fino a 10 post o story al mese, con grafica e testi già pronti',
-      'Impaginazione sulle vostre linee guida visive (colori, logo, stile)',
-      'Contenuti su firme, partite e mercato, con lo stesso “formato” sul feed',
-      'File pronti da pubblicare voi o dal cliente finale',
-      'Partiamo da foto, testi e comunicati che ci mandate voi; 1 giro di modifiche incluso',
-      'Di solito vi consegniamo entro 2 giorni lavorativi dal materiale completo',
-      'WhatsApp nei giorni feriali per domande e piccoli aggiustamenti',
+      'Fino a 10 contenuti al mese tra post statici, caroselli semplici e story grafiche',
+      'Grafiche e testi pronti per la pubblicazione',
+      'Adattamento allo stile visivo del cliente: colori, logo, font e tono',
+      'Format per firme, partite, risultati, convocazioni, mercato e news',
+      'File finali pronti da pubblicare',
+      'Lavorazione da foto, testi, comunicati e materiali forniti dal cliente',
+      '1 giro di modifiche incluso per contenuto',
+      'Consegna entro 2 giorni lavorativi dal materiale completo',
+      'Supporto WhatsApp nei giorni feriali per piccoli aggiustamenti',
     ],
     idealFor:
-      'chi segue pochi giocatori ma vuole dimostrare di avere un reparto social serio.',
+      'agenzie o procuratori con pochi atleti e bisogno di un feed ordinato e credibile verso club e sponsor.',
     ctaLabel: 'Chiedi info su Rookie',
   },
   {
     id: 'rising',
     name: 'Rising',
-    priceLabel: '549 € / mese',
+    priceLabel: '499 € / mese',
     subtitle:
-      'Stagione con tante notizie: frequenza costante senza improvvisare ogni settimana.',
+      'Per agenzie e procuratori che gestiscono più atleti e vogliono una comunicazione più costante, riconoscibile e professionale.',
     recommended: true,
     includes: [
-      'Fino a 20 contenuti al mese (post e story), grafica e testi inclusi',
-      'Grafica e tono di scrittura come da brief che concordiamo con voi',
-      'Supporto su firme, trasferimenti, convocazioni e traguardi del roster',
-      'Mini calendario mensile: vedete in anticipo cosa esce e quando',
-      'Consegna entro 24/48 ore lavorative dopo il vostro ok su testi e impaginazione',
-      'Revisioni incluse nei limiti scritti nel contratto',
-      'WhatsApp per allineamenti rapidi quando la settimana si riempie',
+      'Fino a 20 contenuti al mese tra post, caroselli e story',
+      'Piano contenuti mensile semplice',
+      'Grafiche e copy pronti per la pubblicazione',
+      'Format personalizzati per ogni tipologia di contenuto: firme, matchday, risultati, MVP, rinnovi, trasferimenti, convocazioni',
+      'Linea visiva coerente per agenzia e atleti',
+      'Organizzazione del materiale ricevuto',
+      '1 giro di modifiche incluso per contenuto',
+      'Consegna entro 2 giorni lavorativi dal materiale completo',
+      'Supporto WhatsApp nei giorni feriali',
+      'Mini report mensile con riepilogo dei contenuti prodotti',
     ],
     idealFor:
-      'agenzie che hanno già molte notizie al mese e vogliono un referente social stabile.',
+      'agenzie e procuratori con più atleti che vogliono una comunicazione costante, riconoscibile e professionale.',
     ctaLabel: 'Chiedi info su Rising',
   },
   {
     id: 'all-star',
     name: 'All-star',
-    priceLabel: '749 € / mese',
+    priceLabel: '699 € / mese',
     subtitle:
-      'Roster grande e mercato “caldo”: più contenuti e priorità quando contano di più.',
+      'Per agenzie sportive più strutturate che vogliono una presenza social continua, ordinata e pronta per valorizzare più atleti durante la stagione.',
     includes: [
-      'Fino a 30 contenuti al mese; caroselli più lunghi quando serve raccontare un blocco di notizie',
-      'Più attenzione creativa nei giorni di picco mercato / visibilità',
-      'Messaggi coerenti su più profili, in linea con cosa raccontate a sponsor e club',
-      'Possibilità di esportare il materiale quando fate report al cliente',
-      'Fino a 3 richieste “prioritarie” al mese: risposta entro 1 giorno lavorativo se il materiale è completo',
-      'Elenco delle consegne aggiornato, anche per chi non segue tutte le chat',
-      'Nei giorni delicati si possono concordare in anticipo tempi più stretti (scritti nel contratto)',
+      'Fino a 30 contenuti al mese tra post, caroselli e story',
+      'Calendario editoriale mensile',
+      'Grafiche e testi pronti per pubblicazione',
+      'Format dedicati per: firme e rinnovi, matchday, risultati, statistiche, convocazioni, trasferimenti, sponsor, highlights o momenti chiave',
+      'Adattamento dei contenuti ai singoli atleti o squadre',
+      'Coordinamento visivo completo del feed',
+      '2 giri di modifiche inclusi sui contenuti principali',
+      'Priorità sulla lavorazione rispetto ai pacchetti inferiori',
+      'Supporto WhatsApp nei giorni feriali',
+      'Report mensile contenuti + suggerimenti per il mese successivo',
     ],
     idealFor:
-      'roster ampio e sponsor pesanti: tanti contenuti mentre gestite più trattative.',
+      'agenzie sportive più strutturate con presenza social continua e valorizzazione di più atleti in stagione.',
     ctaLabel: 'Chiedi info su All-star',
   },
 ]
@@ -117,10 +126,12 @@ export const COMMUNICATE_ITEMS = [
 ] as const
 
 export const EXTRAS_ROWS: { label: string; value: string }[] = [
-  { label: 'Contenuto extra semplice', value: '20 €' },
-  { label: 'Post extra grafico', value: '30–40 €' },
-  { label: 'Story extra', value: '10 €' },
-  { label: 'Carosello extra', value: '60–80 €' },
-  { label: 'Reel/video', value: 'Da quotare a parte' },
-  { label: 'Urgenze extra', value: '+25%' },
+  { label: 'Contenuto extra statico/story', value: '30 €' },
+  { label: 'Carosello extra', value: '45 €' },
+  { label: 'Reel semplice con materiale fornito', value: '70 €' },
+  { label: 'Reel avanzato / montaggio highlights', value: 'da 150 €' },
+  { label: 'Pubblicazione diretta sui profili', value: '+150 € mese' },
+  { label: 'Gestione DM/commenti base', value: '+200/300 € mese' },
+  { label: 'Urgenza entro 24h', value: '+20%' },
+  { label: 'Strategia solo consulenza', value: '50 €/ora' },
 ]

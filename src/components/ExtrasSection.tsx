@@ -32,8 +32,8 @@ export function ExtrasSection() {
           </dl>
 
           <p className="pkg-extra-foot">
-            Urgenze, weekend e festivi sono validi solo dopo messaggio confermato; eventuali
-            percentuali sulle ore ordinarie sono già segnate in tabella.
+            Urgenze, weekend e festivi sono validi solo dopo messaggio confermato; sovrapprezzi e
+            percentuali come da tabella, salvo diverso accordo scritto.
           </p>
         </div>
       </div>
