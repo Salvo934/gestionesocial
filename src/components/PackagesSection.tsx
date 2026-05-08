@@ -23,7 +23,7 @@ export function PackagesSection() {
             id="pkg-packages-title"
             className="pkg-section-title pkg-packages-focus"
           >
-            Piano sul roster chiaro 
+            Trova il piano giusto per la tua agenzia e il tuo roster
           </h2>
           <p className="pkg-section-sub pkg-packages-intro">
             Stesso livello su grafica e testi per tutti e tre i piani: cambia solo quanti contenuti incluiamo al mese e quanto possiamo stringere i tempi
